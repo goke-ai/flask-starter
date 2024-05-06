@@ -1,6 +1,9 @@
 from flask import flash, redirect, render_template, session, url_for
 from datetime import datetime
 
+from .. import db
+from ..models import User
+
 from .forms import NameForm
 from . import main
 
@@ -24,3 +27,26 @@ def sampleform():
         return redirect(url_for('main.sampleform'))
     
     return render_template('sampleform.html', form=form, name=session.get('name'))
+
+
+@main.route('/formwithdb', methods=['GET', 'POST'])
+def formwithdb():
+    form = NameForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.name.data).first()
+        
+        if user is None:
+            user = User(username=form.name.data)
+            db.session.add(user)
+            db.session.commit()
+            session['known'] = False
+        else:
+            session['known'] = True
+            
+        session['name'] = form.name.data
+        form.name.data = ''
+        return redirect(url_for('main.formwithdb'))
+        
+    return render_template('formwithdb.html', 
+                           form=form, name=session.get('name'),
+                           known=session.get('known', False))
