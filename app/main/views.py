@@ -1,11 +1,13 @@
 from flask import flash, redirect, render_template, session, url_for
 from datetime import datetime
 
-from .. import db
+from ..email import send_email
 from ..models import User
+from .. import db
 
 from .forms import NameForm
 from . import main
+import app
 
 @main.route('/')
 def index():
@@ -40,6 +42,10 @@ def formwithdb():
             db.session.add(user)
             db.session.commit()
             session['known'] = False
+            
+            # send email
+            if app.config['FLASKY_ADMIN']:
+                send_email(app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
         else:
             session['known'] = True
             

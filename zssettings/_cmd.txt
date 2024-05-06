@@ -1,0 +1,20 @@
+# flask application dev run
+export FLASK_APP=flasky.py
+export FLASK_DEBUG=1
+
+# 
+export MAIL_USERNAME='****@gmail.com' 
+export MAIL_PASSWORD='***'
+export FLASKY_ADMIN='****@gmail.com'
+
+# set requirements
+pip freeze > requirements.txt
+
+# generate secret key
+python -c 'import secrets; print(secrets.token_hex())'
+
+# SQLAlchemy
+flask db init
+flask db migrate -m "initial migration"
+flask db upgrade
+

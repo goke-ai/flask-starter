@@ -1,9 +1,0 @@
-export FLASK_APP=flasky.py
-export FLASK_DEBUG=1
-pip freeze > requirements.txt
-
-python -c 'import secrets; print(secrets.token_hex())'
-
-flask db init
-flask db migrate -m "initial migration"
-
