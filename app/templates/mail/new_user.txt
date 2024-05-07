@@ -1,0 +1,2 @@
+Hi Admin,
+A new user created {{ user.username }}.

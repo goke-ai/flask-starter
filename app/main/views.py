@@ -1,4 +1,4 @@
-from flask import flash, redirect, render_template, session, url_for
+from flask import flash, redirect, render_template, session, url_for, current_app
 from datetime import datetime
 
 from ..email import send_email
@@ -18,21 +18,21 @@ def hello(name):
     return render_template('hello.html', name=name)
 
 
-@main.route('/sampleform', methods=['GET','POST'])
-def sampleform():
+@main.route('/sample-form', methods=['GET','POST'])
+def sample_form():
     form = NameForm()
     if form.validate_on_submit():
         old_name = session.get('name')
         if old_name is not None and old_name != form.name.data:
             flash('Looks like you have changed your name!')
         session['name'] = form.name.data
-        return redirect(url_for('main.sampleform'))
+        return redirect(url_for('main.sample_form'))
     
     return render_template('sampleform.html', form=form, name=session.get('name'))
 
 
-@main.route('/formwithdb', methods=['GET', 'POST'])
-def formwithdb():
+@main.route('/form-with-db', methods=['GET', 'POST'])
+def form_with_db():
     form = NameForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.name.data).first()
@@ -44,14 +44,14 @@ def formwithdb():
             session['known'] = False
             
             # send email
-            if app.config['FLASKY_ADMIN']:
-                send_email(app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
+            if current_app.config['FLASKY_ADMIN']:
+                send_email(current_app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
         else:
             session['known'] = True
             
         session['name'] = form.name.data
         form.name.data = ''
-        return redirect(url_for('main.formwithdb'))
+        return redirect(url_for('main.form_with_db'))
         
     return render_template('formwithdb.html', 
                            form=form, name=session.get('name'),

@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
-from config import config
+from config import config_dic
 
 bootstrap = Bootstrap()
 moment = Moment()
@@ -12,8 +12,8 @@ mail = Mail()
 
 def create_app(config_name):
     app = Flask(__name__)
-    app.config.from_object(config[config_name])
-    config[config_name].init_app(app)
+    app.config.from_object(config_dic[config_name])
+    config_dic[config_name].init_app(app)
     
     bootstrap.init_app(app)
     moment.init_app(app)
