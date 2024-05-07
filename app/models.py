@@ -17,7 +17,7 @@ class User(db.Model):
     username = db.Column(db.String(64), nullable=False, unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     
-    password_hash = db.Column(db.String(128))
+    # password_hash = db.Column(db.String(128))
     
     @property
     def password(self):
