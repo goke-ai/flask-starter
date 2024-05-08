@@ -27,8 +27,18 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('main.hello', name="Goke") }}">Hello</a></li>
+        <li><a href="{{ url_for('main.sample_form') }}">Sample-Form</a></li>
+        <li><a href="{{ url_for('main.form_with_db') }}">Form + DBase</a></li>
       </ul>
-    </div>
+      <ul class="nav navbar-nav navbar-right">
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        {% else %}
+        <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        {% endif %}
+       </ul>
+    </div>    
   </div>
 </div>
 {% endblock %} 
