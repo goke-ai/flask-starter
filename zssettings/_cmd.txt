@@ -1,6 +1,10 @@
+# 
+python3 -m venv .venv
+ . .venv/bin/activate
+pip install -r requirements.txt
+
 # flask application dev run
-export FLASK_APP=flasky.py
-export FLASK_DEBUG=1
+export FLASK_APP=flasky.py && export FLASK_DEBUG=1
 
 # 
 export MAIL_USERNAME='****@gmail.com' 
