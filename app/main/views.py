@@ -1,13 +1,16 @@
 from flask import flash, redirect, render_template, session, url_for, current_app
 from datetime import datetime
 
+from flask_login import login_required
+
+from decorators import admin_required, permission_required
+
 from ..email import send_email
-from ..models import User
+from ..models import Permission, User
 from .. import db
 
 from .forms import NameForm
 from . import main
-import app
 
 
 @main.route('/')
@@ -64,5 +67,26 @@ def form_with_db():
 @main.route('/user/<username>')
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('user.html', user=user, 
+    return render_template('user.html', user=user,
                            current_time=datetime.utcnow())
+
+
+@main.route('/system')
+@login_required
+@admin_required
+def for_system_admins_only():
+    return "For system administrators!"
+
+
+@main.route('/admin')
+@login_required
+@admin_required
+def for_admins_only():
+    return "For administrators!"
+
+
+@main.route('/manager')
+@login_required
+@permission_required(Permission.MODERATE)
+def for_moderators_only():
+    return "For comment managers!"
