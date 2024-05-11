@@ -1,6 +1,6 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
-{% block title %}Flasky - {{ user.username }}{% endblock %} 
+{% block title %}Flasky - {{ user.username }}{% endblock %}
 
 {% block page_content %}
 
@@ -12,9 +12,9 @@
     <p>
       {% if user.name %}{{ user.name }}{% endif %}
       {% if user.location %}
-        From <a href="http://maps.google.com/?q={{ user.location }}">
-          {{ user.location }}
-        </a>
+      From <a href="http://maps.google.com/?q={{ user.location }}">
+        {{ user.location }}
+      </a>
       {% endif %}
     </p>
     {% endif %}
@@ -36,7 +36,7 @@
       <a class="btn btn-danger" href="{{ url_for('.edit_profile_admin', id=user.id) }}">Edit Profile [Admin]</a>
       {% endif %}
     </p>
-  </div> 
+  </div>
 </div>
 
 <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>

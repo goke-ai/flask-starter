@@ -30,15 +30,17 @@ def sample_form():
         old_name = session.get('name')
         if old_name is not None and old_name != form.name.data:
             flash('Looks like you have changed your name!')
+
         session['name'] = form.name.data
         return redirect(url_for('main.sample_form'))
 
-    return render_template('sampleform.html', form=form, name=session.get('name'))
+    return render_template('sample_form.html', form=form, name=session.get('name'))
 
 
 @main.route('/form-with-db', methods=['GET', 'POST'])
 def form_with_db():
     form = NameForm()
+    
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.name.data).first()
 
@@ -59,7 +61,7 @@ def form_with_db():
         form.name.data = ''
         return redirect(url_for('main.form_with_db'))
 
-    return render_template('formwithdb.html',
+    return render_template('form_with_db.html',
                            form=form, name=session.get('name'),
                            known=session.get('known', False))
 

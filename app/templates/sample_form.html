@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky - Sample-Form{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+  <h1>Sample Form</h1>
+</div>
+<div>
+  <h2>
+    {% if name %}
+    {{ name }}
+    {% else %}
+    Stranger
+    {% endif %}!
+  </h2>
+
+</div>
+{{ wtf.quick_form(form) }}
+
+{% endblock %}
