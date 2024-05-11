@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Flasky - Index{% endblock %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Plotly</h1>
+</div>
+<div>
+    {{ json }}
+
+    <div id="chart"></div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+<script type='text/javascript'>
+
+    function determineType(variable) {
+        if (typeof variable === "string") {
+            return "string";
+        } else if (typeof variable === "number" && isFinite(variable)) {
+            return "number";
+        } else if (typeof variable === "object" && !Array.isArray(variable) && variable !== null) {
+            return "object";
+        } else if (Array.isArray(variable)) {
+            return "array";
+        } else if (variable === null) {
+            return "null";
+        } else {
+            return "unknown";
+        }
+    }
+
+    const jsonObject = {{ dataJson | safe}};
+    console.log(jsonObject)
+    const jsonObject2 = {{ dataJson2 | safe}};
+    console.log(jsonObject2)
+
+    // Get an array of keys from the JSON object
+    const keysArray = Object.keys(jsonObject);
+    const keysArray2 = Object.keys(jsonObject2);
+    // Get an array of values from the JSON object
+    const valuesArray = Object.values(jsonObject);
+    const valuesArray2 = Object.values(jsonObject2);
+
+    console.log(keysArray.length, keysArray, keysArray2); // Output: ["name", "age", "city"]
+    console.log(valuesArray.length, valuesArray, valuesArray2); // Output: ["John", 30, "New York"]
+
+    console.log(jsonObject, determineType(jsonObject))
+    console.log(keysArray, determineType(keysArray))
+    console.log(valuesArray, determineType(valuesArray))
+
+    // var divChart = document.getElementById('chart');
+
+    const keys = Object.keys(jsonObject);
+    const values = Object.values(jsonObject);
+
+    if (determineType(values) === "array") {
+
+    }
+    else if (determineType(values) === "object") {
+
+    }
+
+    trace1 = {
+        x: keysArray,
+        y: valuesArray,
+        name: 'Math',
+        type: 'bar',
+        text: valuesArray.map(String),
+        /*
+        textposition: 'auto',
+        hoverinfo: 'none',
+        marker: {
+            color: 'rgb(142,124,195)',
+            opacity: 0.6,
+            line: {
+                color: 'rgb(8,48,107)',
+                width: 1.5
+            }
+        },
+        width:[0.8, 2.5, 4],
+        base: [3, 0, 4]
+        */
+    };
+    trace2 = {
+        x: keysArray2,
+        y: valuesArray2,
+        name: 'Science',
+        type: 'bar',
+        text: valuesArray
+    };
+
+    var data = [trace1, trace2];
+
+    var layout = {
+        title: 'Student Grades',
+        font: {
+            family: 'Raleway, sans-serif'
+        },
+        /*
+        //showlegend: false,
+        legend: {
+            x: 0,
+            y: 1.0,
+            bgcolor: 'rgba(255, 255, 255, 0)',
+            bordercolor: 'rgba(255, 255, 255, 0)'
+        },
+        xaxis: {
+            title: 'Student id',
+            tickangle: -45,
+        },
+        yaxis: {
+            title: 'Grade Point',
+            zeroline: false,
+            gridwidth: 2
+        },
+        bargap: 0.05,
+        bargroupgap: 0.1,
+        barcornerradius: 15,
+        */
+        barmode: 'group'
+    };
+
+    var config = { responsive: true }
+
+    Plotly.newPlot('chart', data, layout, config);
+
+    /* Current Plotly.js version */
+    console.log(Plotly.BUILD);
+</script>
+
+{% endblock %}
