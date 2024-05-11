@@ -1,3 +1,7 @@
+import json
+import plotly.express as px
+import plotly
+import pandas as pd
 from flask import flash, redirect, render_template, session, url_for, current_app
 from datetime import datetime
 
@@ -40,7 +44,7 @@ def sample_form():
 @main.route('/form-with-db', methods=['GET', 'POST'])
 def form_with_db():
     form = NameForm()
-    
+
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.name.data).first()
 
@@ -137,3 +141,39 @@ def edit_profile_admin(id):
     form.location.data = user.location
 
     return render_template('edit_profile.html', form=form, user=user)
+
+
+@main.route('/plotly')
+def plotly():
+
+    # Existing DataFrame
+    df = pd.DataFrame({
+        'id': ['S001', 'S002', 'S003'],
+        'name': ['John Doe', 'Jane Smith', 'Emily Johnson'],
+        'math': ['A', 'B', 'C'],
+        'science': ['B', 'A', 'B'],
+        'history': ['A', 'B', 'C'],
+        'english': ['A', 'A', 'B']
+    }).set_index('id')
+
+    # Define a mapping of grades to points
+    grade_points = {
+        'A': 4,
+        'B': 3,
+        'C': 2,
+        'D': 1,
+        'F': 0
+    }
+
+    # Function to convert grades to points
+    def convert_to_points(grade):
+        return grade_points.get(grade, 0)
+
+    # Apply the function to each grade column
+    for subject in ['math', 'science', 'history', 'english']:
+        df[subject + '_points'] = df[subject].apply(convert_to_points)
+
+    dataJson = df.math_points.to_json()
+    dataJson2 = df.science_points.to_json()
+
+    return render_template('plotly.html', dataJson=dataJson, dataJson2=dataJson2)

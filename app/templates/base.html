@@ -81,5 +81,6 @@
 {{ super() }}
 {{ moment.include_moment() }}
 {{ moment.locale('en') }}
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 {% endblock %}
