@@ -18,6 +18,11 @@ def index():
     return render_template('index.html', current_time=datetime.utcnow())
 
 
+@main.route('/about')
+def about():
+    return render_template('about.html', current_time=datetime.utcnow())
+
+
 @main.route('/hello/<name>')
 def hello(name):
     return render_template('hello.html', name=name)
@@ -40,7 +45,7 @@ def sample_form():
 @main.route('/form-with-db', methods=['GET', 'POST'])
 def form_with_db():
     form = NameForm()
-    
+
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.name.data).first()
 

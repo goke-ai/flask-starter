@@ -34,6 +34,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('main.about') }}">About</a></li>
+        
         {% if current_user.is_authenticated %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -66,9 +68,9 @@
 
   {% block page_content %}{% endblock %}
 
-  <footer class="footer col-md-12">
+  <div class="footer col-md-12">
     ©copyright 2024 | goke - Ark Solutions.
-  </footer>
+  </div>
 </div>
 {% endblock %}
 
