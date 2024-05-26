@@ -1,0 +1,588 @@
+{
+    "school": {
+        "name": "Chelmsford Academy",
+        "address": "789 Education Blvd, Chelmsford, Essex",
+        "principal": "Dr. Elizabeth Windsor",
+        "students": [
+            {
+                "id": 1,
+                "name": "Alice Johnson",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "A"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Bob Smith",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "B"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Charlie Brown",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "C"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Daisy Ridley",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "A"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Evan Wright",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "B"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Fiona Gallagher",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "C"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "name": "George King",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "B"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "name": "Hannah Abbott",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "A"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "B"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "A"
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Ian Holm",
+                "subjects": [
+                    {
+                        "code": "MATH101",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "SCI201",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "HIST301",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "ENG401",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "ART501",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "PE601",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "MUS701",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "GEO801",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "DRAM901",
+                        "grade": "C"
+                    },
+                    {
+                        "code": "COMP1001",
+                        "grade": "C"
+                    }
+                ]
+            }
+        ],
+        "subjects": [
+            {
+                "code": "MATH101",
+                "name": "Mathematics"
+            },
+            {
+                "code": "SCI201",
+                "name": "Science"
+            },
+            {
+                "code": "HIST301",
+                "name": "History"
+            },
+            {
+                "code": "ENG401",
+                "name": "English"
+            },
+            {
+                "code": "ART501",
+                "name": "Art"
+            },
+            {
+                "code": "PE601",
+                "name": "Physical Education"
+            },
+            {
+                "code": "MUS701",
+                "name": "Music"
+            },
+            {
+                "code": "GEO801",
+                "name": "Geography"
+            },
+            {
+                "code": "DRAM901",
+                "name": "Drama"
+            },
+            {
+                "code": "COMP1001",
+                "name": "Computing"
+            }
+        ],
+        "teachers": [
+            {
+                "id": 1,
+                "subjectCode": "MATH101",
+                "teacher": "Mr. Alan Turing"
+            },
+            {
+                "id": 2,
+                "subjectCode": "SCI201",
+                "teacher": "Ms. Marie Curie"
+            },
+            {
+                "id": 3,
+                "subjectCode": "HIST301",
+                "teacher": "Mr. Winston Churchill"
+            },
+            {
+                "id": 4,
+                "subjectCode": "ENG401",
+                "teacher": "Ms. Jane Austen"
+            },
+            {
+                "id": 5,
+                "subjectCode": "ART501",
+                "teacher": "Mr. Pablo Picasso"
+            },
+            {
+                "id": 6,
+                "subjectCode": "PE601",
+                "teacher": "Ms. Serena Williams"
+            },
+            {
+                "id": 7,
+                "subjectCode": "MUS701",
+                "teacher": "Mr. Ludwig van Beethoven"
+            },
+            {
+                "id": 8,
+                "subjectCode": "GEO801",
+                "teacher": "Ms. Amelia Earhart"
+            },
+            {
+                "id": 9,
+                "subjectCode": "DRAM901",
+                "teacher": "Mr. William Shakespeare"
+            },
+            {
+                "id": 10,
+                "subjectCode": "COMP1001",
+                "teacher": "Ms. Ada Lovelace"
+            }
+        ],
+        "gradePoints": [
+            {
+                "id": 1,
+                "grade": "A",
+                "points": 4.0
+            },
+            {
+                "id": 2,
+                "grade": "B",
+                "points": 3.0
+            },
+            {
+                "id": 3,
+                "grade": "C",
+                "points": 2.0
+            },
+            {
+                "id": 4,
+                "grade": "D",
+                "points": 1.0
+            },
+            {
+                "id": 5,
+                "grade": "F",
+                "points": 0.0
+            }
+        ]
+    },
+    "bank": {
+        "name": "Sample Bank",
+        "location": "123 Main Street, Anytown, AT 12345",
+        "accounts": [
+            {
+                "account_id": "001",
+                "account_type": "Checking",
+                "balance": 1500.75,
+                "currency": "USD",
+                "customer_id": "C001"
+            },
+            {
+                "account_id": "002",
+                "account_type": "Savings",
+                "balance": 5500.0,
+                "currency": "USD",
+                "customer_id": "C002"
+            },
+            {
+                "account_id": "003",
+                "account_type": "Business",
+                "balance": 25000.0,
+                "currency": "USD",
+                "customer_id": "C003"
+            }
+        ],
+        "customers": [
+            {
+                "customer_id": "C001",
+                "name": "John Smith",
+                "address": "101 First Street, Anytown, AT 12345"
+            },
+            {
+                "customer_id": "C002",
+                "name": "Jane Doe",
+                "address": "202 Second Street, Anytown, AT 12345"
+            },
+            {
+                "customer_id": "C003",
+                "name": "XYZ Corp.",
+                "address": "303 Third Street, Business District, Anytown, AT 12345"
+            }
+        ]
+    }
+}
